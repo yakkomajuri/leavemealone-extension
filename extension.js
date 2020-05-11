@@ -25,6 +25,9 @@ async function loadDomains() {
         handleFail()
     });
 }
+
+// Try to pull a list from chrome.storage
+// Otherwise try the request once more
 async function handleFail() {
     try {
         let list = await chrome.storage.local.get(["domains"]);
