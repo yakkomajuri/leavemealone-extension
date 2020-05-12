@@ -22,4 +22,25 @@ In fact, the best case scenario is that you download this extension and never he
   - Switches jQuery AJAX for Fetch API (~20% decrease in extension size)
   - Fixes incorrect implementation of `chrome.storage.local.get`
 
-  
+# For Developers
+
+**Want the latest release before it comes out on the Chrome Web Store?** 
+
+1. Clone the corresponding version branch.
+*Latest stable version not on the Web Store is v0.0.3*
+
+2. Go to "Extensions" on any Chromium-based browser
+
+3. Enable "Developer Mode"
+
+4. Click "Load Unpacked" and select the root directory of the cloned repo
+
+
+**Want to contribute?** 
+
+  * Issues and PRs are most welcome
+  * Clone and submit PRs only to the `dev` branch. Here's an overview of the branches:
+    * `master` hosts the latest version approved by the Chrome Web Store, with comments left in the code
+    * Version branches (`0.0.2`, `0.0.3`, etc...) host versions that are ready for Chrome Web Store release
+    * `dev` hosts the branch where the magic happens. It may be unstable, and once a new version is in order, it will be forked from `dev` and become a standalone branch.
+
