@@ -19,7 +19,7 @@ In fact, the best case scenario is that you download this extension and never he
   
 ### 0.0.3 (Latest version approved by the Chrome Web Store)
 
-  - Switches jQuery AJAX for Fetch API (~20% decrease in extension size)
+  - Switches jQuery AJAX for Fetch API (~70% decrease in extension size)
   - Fixes incorrect implementation of `chrome.storage.local.get`
 
 # For Developers
