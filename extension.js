@@ -5,7 +5,7 @@ let failureHandledOnce = false;
 async function loadDomains() {
     try {
         let response = await fetch('https://blocklist.cyberthreatcoalition.org/vetted/domain.txt');
-        let txt = (await response.text())
+        let txt = await response.text()
         setList(txt);
     } catch (err) {
         handleFail()
@@ -38,7 +38,7 @@ chrome.webNavigation.onCompleted.addListener(function (tab) {
                 .replace("http://", "")
             let domain = parsedUrl.slice(0, parsedUrl.indexOf('/') == -1 ? parsedUrl.length : parsedUrl.indexOf('/'))
                 .slice(0, parsedUrl.indexOf('?') == -1 ? parsedUrl.length : parsedUrl.indexOf('?'))
-            if (domains.includes(domain)) {
+            if (domains.includes(domain) && domain.length > 2 && domain !== null && domain !== undefined) {
                 alert("Watch out! The Cyber Threat Coalition marked this domain (" + domain + ") as potentially malicious. Proceed with caution. Do as you wish, but I would recommend not sharing any data with this website.");
             }
         });
