@@ -8,16 +8,16 @@ In fact, the best case scenario is that you download this extension and never he
 
 # Releases
 
-### 0.0.1 (Latest version approved by the Chrome Web Store)
+### 0.0.1
 
   - Basic functionality to get the list of malicious domains and check if you're on one of them
  
-### 0.0.2 (Pending Review on the Web Store)
+### 0.0.2
 
   - Implements a fallback mechanism for failed GET requests
   - Includes the domain marked as malicious in the alert
   
-### 0.0.3 (Ready for release)
+### 0.0.3 (Latest version approved by the Chrome Web Store)
 
   - Switches jQuery AJAX for Fetch API (~20% decrease in extension size)
   - Fixes incorrect implementation of `chrome.storage.local.get`
