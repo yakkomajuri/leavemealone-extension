@@ -5,7 +5,7 @@ let failureHandledOnce = false;
 async function loadDomains() {
     try {
         let response = await fetch('https://blocklist.cyberthreatcoalition.org/vetted/domain.txt');
-        let txt = await response.text()
+        let txt = await response.text();
         setList(txt);
     } catch (err) {
         handleFail()
@@ -14,14 +14,15 @@ async function loadDomains() {
 
 async function setList(res) {
     domains = res.split('\n');
+    domains.splice(0, 1);
     await chrome.storage.local.set({ "domains": domains });
 }
 
 function handleFail() {
     try {
-        chrome.storage.local.get(["domains"], function(result) {
+        chrome.storage.local.get(["domains"], function (result) {
             domains = result.domains;
-        });        
+        });
     } catch (err) {
         if (!failureHandledOnce) {
             loadDomains();
@@ -37,10 +38,17 @@ chrome.webNavigation.onCompleted.addListener(function (tab) {
             let parsedUrl = url.replace("https://", "")
                 .replace("http://", "")
             let domain = parsedUrl.slice(0, parsedUrl.indexOf('/') == -1 ? parsedUrl.length : parsedUrl.indexOf('/'))
-                .slice(0, parsedUrl.indexOf('?') == -1 ? parsedUrl.length : parsedUrl.indexOf('?'))
-            if (domains.includes(domain) && domain.length > 2 && domain !== null && domain !== undefined) {
-                alert("Watch out! The Cyber Threat Coalition marked this domain (" + domain + ") as potentially malicious. Proceed with caution. Do as you wish, but I would recommend not sharing any data with this website.");
+                .slice(0, parsedUrl.indexOf('?') == -1 ? parsedUrl.length : parsedUrl.indexOf('?'));
+            try {
+                if (domain.length < 3 || domain === null || domain === undefined) {
+                    return;
+                } else if (domains.includes(domain)) {
+                    alert("Watch out! The Cyber Threat Coalition marked this domain (" + domain + ") as potentially malicious. Proceed with caution. Do as you wish, but I would recommend not sharing any data with this website.");
+                }
+            } catch (err) {
+                return;
             }
+
         });
     }
 });
