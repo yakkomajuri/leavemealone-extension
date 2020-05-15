@@ -3,7 +3,7 @@
  
     "name": "Leave Me Alone!", 
     "description": "Get alerted about malicious websites.",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "author": "Yakko Majuri",
     "browser_action": {
         "default_icon": "icon.png",
