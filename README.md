@@ -21,10 +21,15 @@ In fact, the best case scenario is that you download this extension and never he
 
   - Switches jQuery AJAX for Fetch API (~70% decrease in extension size)
   - Fixes incorrect implementation of `chrome.storage.local.get`
-  
-### 0.0.4 (Pending Review by the Chrome Web Store)
+
+### 0.0.6 
 
   - Fixes false positives
+
+### 0.0.7 (Pending Review by the Chrome Web Store)
+
+  - Added icons according to the guidelines
+  
 
 # For Developers
 
