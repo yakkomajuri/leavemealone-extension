@@ -26,9 +26,10 @@ In fact, the best case scenario is that you download this extension and never he
 
   - Fixes false positives
 
-### 0.0.7 (Pending Review by the Chrome Web Store)
+### 0.0.8 (Pending Review by the Chrome Web Store)
 
   - Added icons according to the guidelines
+  - Added support for "www" subdomains
   
 
 # For Developers
