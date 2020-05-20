@@ -37,6 +37,7 @@ chrome.webNavigation.onCompleted.addListener(function (tab) {
             let url = tabs[0].url;
             let parsedUrl = url.replace("https://", "")
                 .replace("http://", "")
+                .replace("www.", "")
             let domain = parsedUrl.slice(0, parsedUrl.indexOf('/') == -1 ? parsedUrl.length : parsedUrl.indexOf('/'))
                 .slice(0, parsedUrl.indexOf('?') == -1 ? parsedUrl.length : parsedUrl.indexOf('?'));
             try {

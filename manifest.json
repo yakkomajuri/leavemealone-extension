@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Leave Me Alone!",
     "description": "A lightweight extension to alert users if they are entering a website marked as malicious by the Cyber Threat Coalition.",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "author": "Yakko Majuri",
     "icons": {
         "16": "icon16.png",
@@ -10,7 +10,7 @@
         "128": "icon128.png"
     },
     "browser_action": {
-        "default_icon": "icon_16.png",
+        "default_icon": "icon16.png",
         "default_title": "Leave Me Alone!"
     },
     "homepage_url": "https://dvision.tech/leavemealone",
